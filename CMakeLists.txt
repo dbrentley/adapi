@@ -3,6 +3,6 @@ project(adapi C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(adapi main.c logger.c logger.h socket.c socket.h main.h cmake-build-debug/utils.c cmake-build-debug/utils.h)
+add_executable(adapi main.c logger.c logger.h socket.c socket.h main.h utils.c utils.h)
 
 target_link_libraries(adapi ssl crypto)

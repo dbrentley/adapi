@@ -78,9 +78,13 @@ void socket_receive(core_t *core) {
             memcpy(h, header + position, x - position);
             split_header(h, core->headers, core);
             free(h);
+            h = NULL;
             h = calloc(header_size, sizeof(char));
             position = x += 2;
         }
+    }
+    if (h != NULL) {
+        free(h);
     }
 }
 
