@@ -5,7 +5,7 @@
 #include "socket.h"
 #include "logger.h"
 #include "main.h"
-#include "cmake-build-debug/utils.h"
+#include "utils.h"
 
 #if defined(__linux__)
 
@@ -26,7 +26,7 @@
 
 
 void socket_send(core_t *core, char *request, ...) {
-    char *msg = (char *) calloc(4096, 4096);
+    char *msg = (char *) calloc(4096, sizeof(char));
     if (msg == NULL) {
         logline(FATAL, "Could not allocate memory for message.");
         exit(-1);
