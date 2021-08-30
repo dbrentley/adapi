@@ -1,0 +1,1 @@
+Makes HTTPS request, parses request, and prints headers.
